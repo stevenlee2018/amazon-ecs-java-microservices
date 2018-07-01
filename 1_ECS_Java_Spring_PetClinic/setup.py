@@ -101,7 +101,7 @@ def create_ecs_cluster(stack_name):
                 },
                 {
                     'ParameterKey': 'EcsInstanceType',
-                    'ParameterValue': 'm4.large',
+                    'ParameterValue': 't2.micro',
                     'UsePreviousValue': True
                 },
                 {
@@ -176,7 +176,7 @@ def create_ecs_cluster_mysql(stack_name, stack_name_ecs_cluster, vpc_id, subnet1
                 },
                 {
                     'ParameterKey': 'InstanceType',
-                    'ParameterValue': 'm4.large'
+                    'ParameterValue': 't2.micro'
                 }
             ],
             TimeoutInMinutes=123,
@@ -681,7 +681,9 @@ def setup(project_name='spring-petclinic-rest', service_list={'spring-petclinic-
                         'hostPort': 0
                     }
                 ],
-                'memory': 1024,
+               	#modifiled by jli, change memory from 1024 to 500 to fit in with t2.micro instance type 
+		#'memory': 1024,
+		'memory': 500,
                 'cpu': 500,
                 'environment': [
                     {
