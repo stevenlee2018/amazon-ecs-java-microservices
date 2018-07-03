@@ -156,7 +156,7 @@ def create_ecs_cluster_mysql(stack_name, stack_name_ecs_cluster, vpc_id, subnet1
                 },
                 {
                     'ParameterKey': 'DesiredCapacity',
-                    'ParameterValue': '2'
+                    'ParameterValue': '1'
                 },
                 {
                     'ParameterKey': 'VPC',
