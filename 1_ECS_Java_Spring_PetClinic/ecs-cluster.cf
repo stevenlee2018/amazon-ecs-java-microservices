@@ -218,7 +218,7 @@
         "MasterUsername": {
           "Ref": "DBUsername"
         },
-        "DBInstanceClass": "db.t2.medium",
+        "DBInstanceClass": "db.t2.micro",
         "AllocatedStorage": "5",
         "DBSubnetGroupName": {
           "Ref": "PetClinicSubnetGroup"
