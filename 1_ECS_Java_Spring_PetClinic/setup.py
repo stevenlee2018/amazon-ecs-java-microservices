@@ -81,7 +81,7 @@ def create_ecs_cluster(stack_name):
             Parameters=[
                 {
                     'ParameterKey': 'AsgMaxSize',
-                    'ParameterValue': '2',
+                    'ParameterValue': '2',        #change from 2 to 0 by jli
                     'UsePreviousValue': True
                 },
                 {
@@ -156,7 +156,7 @@ def create_ecs_cluster_mysql(stack_name, stack_name_ecs_cluster, vpc_id, subnet1
                 },
                 {
                     'ParameterKey': 'DesiredCapacity',
-                    'ParameterValue': '1'
+                    'ParameterValue': '1'         #changed from 2 to 1 by jli
                 },
                 {
                     'ParameterKey': 'VPC',
@@ -681,9 +681,7 @@ def setup(project_name='spring-petclinic-rest', service_list={'spring-petclinic-
                         'hostPort': 0
                     }
                 ],
-               	#modifiled by jli, change memory from 1024 to 500 to fit in with t2.micro instance type 
-		#'memory': 1024,
-		'memory': 500,
+		'memory': 500,      #change memory from 1024 to 500 to fit in with t2.micro instance type by jli
                 'cpu': 500,
                 'environment': [
                     {
@@ -735,8 +733,7 @@ def setup(project_name='spring-petclinic-rest', service_list={'spring-petclinic-
                     'containerPort': int(service_list[service])
                 },
             ],
-            #change desired count from 2 to 0 by jli 
-	    desiredCount=0,
+	    desiredCount=0,      #change desiredCount from 2 to 0 by jli
             clientToken=str(uuid.uuid4()),
             role=role_arns['ecsrolearn'],
             deploymentConfiguration={
