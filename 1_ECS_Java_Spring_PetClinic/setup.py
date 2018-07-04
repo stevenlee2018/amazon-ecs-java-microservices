@@ -735,7 +735,8 @@ def setup(project_name='spring-petclinic-rest', service_list={'spring-petclinic-
                     'containerPort': int(service_list[service])
                 },
             ],
-            desiredCount=2,
+            #change desired count from 2 to 0 by jli 
+	    desiredCount=0,
             clientToken=str(uuid.uuid4()),
             role=role_arns['ecsrolearn'],
             deploymentConfiguration={
