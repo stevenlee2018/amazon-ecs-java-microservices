@@ -81,7 +81,7 @@ def create_ecs_cluster(stack_name):
             Parameters=[
                 {
                     'ParameterKey': 'AsgMaxSize',
-                    'ParameterValue': '2',        #change from 2 to 0 by jli
+                    'ParameterValue': '0',        #change from 2 to 0 by jli
                     'UsePreviousValue': True
                 },
                 {
@@ -152,7 +152,7 @@ def create_ecs_cluster_mysql(stack_name, stack_name_ecs_cluster, vpc_id, subnet1
             Parameters=[
                 {
                     'ParameterKey': 'AsgMaxSize',
-                    'ParameterValue': '2'
+                    'ParameterValue': '0'         #change AsgMaxSize from 2 to 0 by jli
                 },
                 {
                     'ParameterKey': 'DesiredCapacity',
